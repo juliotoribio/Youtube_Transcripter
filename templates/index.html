@@ -6,21 +6,25 @@
     <title>Julio Toribio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <!-- Asegúrate de tener la fuente Reddit Sans disponible en tu proyecto -->
-    <link rel="stylesheet" href="path/to/reddit-sans.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="content">
-        <h1 class="titulo">Convertidor de Audio a Texto</h1>
+        <img src="{{ url_for('static', filename='logo.svg') }}" alt="Logo" class="logo">
+        <h1 class="titulo"><span class="lexend">Convierte</span> <br><span class="noto-serif">Contenido de <span class="italic">Youtube</span></span> <br><span class="lexend">a Texto!</span></h1>
+        <p class="subtitulo">Ingresa el link de un video a continuación:</p>  
         <form method="POST" class="input-form">
             <div class="input-group">
-                <input type="text" id="url" name="url" placeholder="Ingresa Link de Youtube" required>
+                <input type="text" id="url" name="url" placeholder="Ej: https://www.youtube.com/watch?v=WCr4TlFUVH8" required>
                 <button type="submit">
                     Obtener Texto
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </button>
             </div>
         </form>
+        <p class="footer">Desarrollado por @julioindigital 2024</p>  
         {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             <ul>
@@ -32,7 +36,6 @@
         {% endwith %}
         {% if transcript %}
             <div class="transcript-container">
-          <!--  <h2 class="transcript-subtitle">ACCEDE</h2> -->
                 <h2 class="transcript-title">Contenido del Video:</h2>
                 <span class="material-symbols-outlined copy-icon" onclick="copyTranscript()">content_copy</span>
                 <p class="transcript-content" id="transcript">{{ transcript }}</p>

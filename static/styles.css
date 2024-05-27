@@ -1,15 +1,7 @@
-/* Incluye esta sección si necesitas cargar la fuente desde un archivo local */
-@font-face {
-    font-family: 'Reddit Sans';
-    src: url('path/to/reddit-sans.woff2') format('woff2'),
-         url('path/to/reddit-sans.woff') format('woff');
-    font-weight: 200 900;
-    font-style: normal;
-}
-
 body {
     font-family: 'Reddit Sans', sans-serif;
-    background: #010312;
+    background: url('/static/background.webp') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     margin: 0;
     padding: 0;
@@ -26,13 +18,44 @@ body {
     margin: 0 auto;
 }
 
-.titulo {
-    font-size: 36px; /* Tamaño del título */
-    margin: 150px 50px 50px 50px; /* Espacio superior e inferior */
-    font-weight: 700; /* Ajusta el peso de la fuente según sea necesario */
-    font-size: 25px;
-   /* text-transform: uppercase; */
+.logo {
+    width: 40px; /* Ajusta el tamaño según sea necesario */
+    margin: 40px auto; /* Espacio alrededor del logo */
+    fill: #fff;
+    color: #fff;
+}
 
+.titulo {
+    font-size: 50px; /* Tamaño del título */
+    margin: 80px 50px 30px 50px; /* Espacio superior e inferior */
+    font-weight: 400; /* Ajusta el peso de la fuente según sea necesario */
+    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+}
+
+.subtitulo {
+    font-size: 20px; /* Tamaño del subtítulo */
+    margin: 0px 50px 60px 50px; /* Espacio superior e inferior */
+    font-weight: 300; /* Ajusta el peso de la fuente según sea necesario */
+    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+}
+
+.footer {
+    font-size: 18px; /* Tamaño del pie de página */
+    margin: 200px 0px 0px 0px; /* Espacio superior e inferior */
+    font-weight: 300; /* Ajusta el peso de la fuente según sea necesario */
+    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+}
+
+.lexend {
+    font-family: 'Lexend', sans-serif;
+}
+
+.noto-serif {
+    font-family: 'Noto Serif', serif;
+}
+
+.italic {
+    font-style: italic;
 }
 
 .input-form {
@@ -65,6 +88,7 @@ input[type="text"] {
 
 input[type="text"]::placeholder {
     color: #ccc;
+    font-weight: 200;
 }
 
 button {
@@ -73,7 +97,7 @@ button {
     justify-content: center;
     padding: 15px 30px; /* Asegura que el padding es suficiente para centrar verticalmente */
     font-size: 16px;
-    background-color: #373EFF;
+    background-color: #000;
     color: #fff;
     border: none;
     border-radius: 15px;
@@ -82,7 +106,7 @@ button {
 }
 
 button:hover {
-    background-color: #2b2dd6;
+    background-color: #8b4ffb;
 }
 
 button .material-symbols-outlined {
@@ -135,5 +159,3 @@ li {
     cursor: pointer;
     color: #fff; /* Ajusta el color según sea necesario */
 }
-
-

@@ -1,4 +1,4 @@
 # Añade todas las dependencias de tu proyecto aquí
-openai
-requests
+Flask
+youtube-transcript-api
 # etc.

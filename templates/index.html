@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Toribio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- Asegúrate de tener la fuente Reddit Sans disponible en tu proyecto -->
+    <link rel="stylesheet" href="path/to/reddit-sans.css">
+</head>
+<body>
+    <div class="content">
+        <h1 class="titulo">Convertidor de Audio a Texto</h1>
+        <form method="POST" class="input-form">
+            <div class="input-group">
+                <input type="text" id="url" name="url" placeholder="Ingresa Link de Youtube" required>
+                <button type="submit">
+                    Obtener Texto
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+        {% if transcript %}
+            <div class="transcript-container">
+                <h2 class="transcript-subtitle">ACCEDE</h2>
+                <h2 class="transcript-title">Contenido del Video:</h2>
+                <span class="material-symbols-outlined copy-icon" onclick="copyTranscript()">content_copy</span>
+                <p class="transcript-content" id="transcript">{{ transcript }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        function copyTranscript() {
+            const transcriptText = document.getElementById('transcript').innerText;
+            navigator.clipboard.writeText(transcriptText).then(() => {
+                alert('Texto copiada al portapapeles');
+            }).catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

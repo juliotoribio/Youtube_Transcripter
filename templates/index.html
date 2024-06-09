@@ -36,7 +36,10 @@
         {% if transcript %}
             <div class="transcript-container">
                 <h2 class="transcript-title">Contenido del Video:</h2>
-                <span class="material-symbols-outlined copy-icon" onclick="copyTranscript()">content_copy</span>
+                <div>
+                    <span class="material-symbols-outlined copy-icon" onclick="copyTranscript()">content_copy</span>
+                    <span class="material-symbols-outlined chatgpt-button" onclick="sendToChatGPT()">open_in_new</span>
+                </div>
                 <p class="transcript-content" id="transcript">{{ transcript }}</p>
             </div>
         {% endif %}
@@ -45,13 +48,21 @@
         function copyTranscript() {
             const transcriptText = document.getElementById('transcript').innerText;
             navigator.clipboard.writeText(transcriptText).then(() => {
-                alert('Texto copiada al portapapeles');
+                alert('Texto copiado al portapapeles');
+            }).catch(err => {
+                console.error('Error al copiar el texto: ', err);
+            });
+        }
+
+        function sendToChatGPT() {
+            const transcriptText = document.getElementById('transcript').innerText;
+            navigator.clipboard.writeText(transcriptText).then(() => {
+                window.open('https://chatgpt.com/g/g-CPZ62OvXi-yt-content-creator', '_blank');
             }).catch(err => {
                 console.error('Error al copiar el texto: ', err);
             });
         }
     </script>
     <p class="footer">Desarrollado por @julioindigital 2024</p>  
-
 </body>
 </html>

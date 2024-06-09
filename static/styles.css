@@ -19,31 +19,31 @@ body {
 }
 
 .logo {
-    width: 40px; /* Ajusta el tamaño según sea necesario */
-    margin: 40px auto; /* Espacio alrededor del logo */
-    fill: #fff;
+    width: 40px;
+    margin: 40px auto;
     color: #fff;
 }
 
+.titulo, .subtitulo, .footer {
+    font-weight: 300;
+    line-height: 1.1;
+    margin: 0 50px;
+}
+
 .titulo {
-    font-size: 50px; /* Tamaño del título */
-    margin: 80px 50px 30px 50px; /* Espacio superior e inferior */
-    font-weight: 400; /* Ajusta el peso de la fuente según sea necesario */
-    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+    font-size: 50px;
+    margin: 80px 50px 30px;
+    font-weight: 400;
 }
 
 .subtitulo {
-    font-size: 20px; /* Tamaño del subtítulo */
-    margin: 0px 50px 60px 50px; /* Espacio superior e inferior */
-    font-weight: 300; /* Ajusta el peso de la fuente según sea necesario */
-    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+    font-size: 20px;
+    margin-bottom: 60px;
 }
 
 .footer {
-    font-size: 18px; /* Tamaño del pie de página */
-    margin: 200px 0px 0px 0px; /* Espacio superior e inferior */
-    font-weight: 300; /* Ajusta el peso de la fuente según sea necesario */
-    line-height: 1.1; /* Ajusta este valor para cambiar la separación vertical */
+    font-size: 18px;
+    margin-top: 200px;
 }
 
 .lexend {
@@ -70,7 +70,7 @@ body {
     width: 100%;
     max-width: 600px;
     border-radius: 20px;
-    border: solid 4px;
+    border: 4px solid;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
@@ -95,7 +95,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px 30px; /* Asegura que el padding es suficiente para centrar verticalmente */
+    padding: 15px 30px;
     font-size: 16px;
     background-color: #000;
     color: #fff;
@@ -107,11 +107,6 @@ button {
 
 button:hover {
     background-color: #1b1b1b;
-}
-
-button .material-symbols-outlined {
-    margin-left: 8px; /* Espacio entre el texto y el icono */
-    font-size: 24px; /* Tamaño del icono */
 }
 
 ul {
@@ -157,5 +152,18 @@ li {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    color: #fff; /* Ajusta el color según sea necesario */
+    color: #fff;
+}
+
+button .material-symbols-outlined {
+    margin-left: 8px;
+    font-size: 24px;
+}
+
+.chatgpt-button {
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    cursor: pointer;
+    color: #fff;
 }

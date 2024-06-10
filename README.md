@@ -48,7 +48,3 @@ Aplicación web que convierte videos de YouTube a texto utilizando Flask para el
 ## Contribuciones
 
 Las contribuciones son bienvenidas. Abre un issue o pull request.
-
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.

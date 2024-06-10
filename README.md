@@ -23,7 +23,7 @@ Aplicación web que convierte videos de YouTube a texto utilizando Flask para el
 
 1. Clona el repositorio:
     ```bash
-    git clone https://github.com/tu_usuario/tu_repositorio.git
+    git clone https://github.com/juliotoribio/Youtube_Speech_to_Text
     cd tu_repositorio
     ```
 

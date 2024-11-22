@@ -26,18 +26,23 @@ class YouTubeScraper:
 
     def get_transcript(self, languages=['es']):
         try:
+            # Intentar obtener la transcripción en el idioma solicitado
             transcript = YouTubeTranscriptApi.get_transcript(self.video_id, languages)
             transcript_text = " ".join([entry['text'] for entry in transcript])
             return transcript_text
         except TranscriptsDisabled:
-            print(f"Error: Los subtítulos están deshabilitados para el video {self.video_id}.")
-            return "Error: Los subtítulos están deshabilitados para este video."
+            print(f"Los subtítulos/transcripciones están deshabilitados para el video {self.video_id}.")
+            return "Los subtítulos/transcripciones están deshabilitados para este video."
         except VideoUnavailable:
-            print(f"Error: El video {self.video_id} no está disponible.")
-            return "Error: El video no está disponible."
+            print(f"El video {self.video_id} no está disponible.")
+            return "El video no está disponible."
         except Exception as e:
-            print(f"Detalles del error: {str(e)}")
-            return "Error: No se pudo obtener la transcripción debido a un problema inesperado."
+            if "No transcripts were found" in str(e):
+                print(f"No hay transcripciones disponibles para el video {self.video_id}.")
+                return "No hay transcripciones disponibles para este video."
+            else:
+                print(f"Error inesperado: {str(e)}")
+                return "Ocurrió un error inesperado al obtener la transcripción."
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

@@ -1,4 +1,5 @@
 # Añade todas las dependencias de tu proyecto aquí
 Flask
 youtube-transcript-api
+gunicorn
 # etc.

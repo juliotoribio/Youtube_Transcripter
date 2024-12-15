@@ -2,4 +2,6 @@
 Flask==2.3.2
 youtube-transcript-api==0.5.0
 gunicorn==20.1.0
-Werkzeug==2.3.6  # Dependencia de Flask
+Werkzeug==2.3.6
+click==8.1.7
+requests==2.32.3
